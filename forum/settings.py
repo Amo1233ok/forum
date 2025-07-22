@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'forum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'forum.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',  # Ce sera le nom du fichier de votre base de données SQLite
+        'NAME': BASE_DIR / 'mydatabase.sqlite3',  # Ce sera le nom du fichier de votre base de données SQLite
     }
 }
 
@@ -125,10 +125,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# Définir l'URL de base pour les fichiers statiques
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+
+# Définir le chemin absolu vers le répertoire des fichiers statiques
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# Répertoire où les fichiers statiques seront collectés avec la commande `collectstatic`
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# URL de base pour les fichiers médias
+MEDIA_URL = '/media/'
+
+# Répertoire où les fichiers médias seront stockés
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
