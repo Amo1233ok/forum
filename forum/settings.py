@@ -72,14 +72,20 @@ WSGI_APPLICATION = 'forum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+#DATABASES = {
+  #  'default': {
+   #     'ENGINE': 'django.db.backends.mysql',
+    #    'NAME': 'admin',
+      #  'USER': 'root',
+     #   'PASSWORD': 'root',
+      #  'HOST': 'localhost',  # ou l'adresse IP de votre serveur MySQL
+       # 'PORT': '3306',  # le port par défaut pour MySQL
+   # }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'admin',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # ou l'adresse IP de votre serveur MySQL
-        'PORT': '3306',  # le port par défaut pour MySQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',  # Ce sera le nom du fichier de votre base de données SQLite
     }
 }
 
