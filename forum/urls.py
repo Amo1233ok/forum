@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.post_list),
     path('post/', views.post),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
 ]
 
 if settings.DEBUG:
