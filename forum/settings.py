@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1h+a+#12xoikiadth@u*+ph2l_hp$3z&t=k8%9md$$*^3tbk!2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['amonon.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'amonon.pythonanywhere.com'] # ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'POSTS.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -101,12 +102,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+   # {
+   #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+   # },
+  #  {
+  #      'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+   # },
 ]
 
 
