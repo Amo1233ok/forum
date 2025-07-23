@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col">
                     <article class="poste" >
-                        <h2> <strong> <a href="{% url './post_detail' pk=post.pk %}" class="texto">{{ post.title }}</a> </strong></h2>
+                        <h2> <strong> <a href="{% url 'post_detail' pk=post.pk %}" class="texto">{{ post.title }}</a> </strong></h2>
                         <p>{{ post.text|linebreaksbr }}</p>
                         <time>Date de publication: {{ post.published_date }}</time>
                     </article>
